@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Typing Game</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 50px;
+      }
+      #letter {
+        font-size: 50px;
+        margin: 20px;
+        color: black;
+        transition: color 0.2s;
+      }
+      #letter.wrong {
+        color: red;
+      }
+      #score,
+      #timer,
+      #average-time {
+        font-size: 20px;
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Typing Game</h1>
+    <button id="start-button">Start Game</button>
+    <div id="game-container">
+      <div id="timer">Time Left: 10s</div>
+      <div id="score">Score: 0</div>
+      <div id="average-time">Average Reaction Time: N/A</div>
+      <div id="letter">A</div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
