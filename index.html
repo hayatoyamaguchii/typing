@@ -1,41 +1,115 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Typing Game</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        text-align: center;
-        margin-top: 50px;
-      }
-      #letter {
-        font-size: 50px;
-        margin: 20px;
-        color: black;
-        transition: color 0.2s;
-      }
-      #letter.wrong {
-        color: red;
-      }
-      #score,
-      #timer,
-      #average-time {
-        font-size: 20px;
-        margin: 10px;
-      }
-    </style>
-  </head>
-  <body>
-    <h1>Typing Game</h1>
-    <button id="start-button">Start Game</button>
-    <div id="game-container">
-      <div id="timer">Time Left: 10s</div>
-      <div id="score">Score: 0</div>
-      <div id="average-time">Average Reaction Time: N/A</div>
-      <div id="letter">A</div>
-    </div>
-    <script src="main.js"></script>
-  </body>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>タイピング初速練習</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            body {
+                font-family: "Noto Sans JP", sans-serif;
+                background: #1e1e1e;
+                color: white;
+                text-align: center;
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            #game-container {
+                height: 400px;
+                background: rgba(255, 255, 255, 0.1);
+                padding: 20px;
+                margin-top: 50px;
+                border-radius: 10px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+                max-width: 600px;
+                width: 90%;
+            }
+
+            #letter {
+                font-size: 120px;
+                font-weight: bold;
+                font-family: "Roboto Mono", monospace;
+                margin: 20px;
+                color: #ffcc00;
+                transition: transform 0.1s ease-in-out;
+            }
+
+            #letter.wrong {
+                color: red;
+                animation: shake 0.2s ease-in-out;
+            }
+
+            @keyframes shake {
+                0%,
+                100% {
+                    transform: translateX(0);
+                }
+                25% {
+                    transform: translateX(-5px);
+                }
+                50% {
+                    transform: translateX(5px);
+                }
+                75% {
+                    transform: translateX(-3px);
+                }
+            }
+
+            #letter.correct {
+                transform: scale(1.2);
+            }
+
+            #score,
+            #timer,
+            #average-time {
+                font-size: 18px;
+                margin: 10px;
+            }
+
+            #input-letter,
+            #romaji-letter {
+                font-size: 30px;
+            }
+
+            button {
+                background: #ffcc00;
+                border: none;
+                padding: 10px 20px;
+                font-size: 16px;
+                font-weight: bold;
+                cursor: pointer;
+                border-radius: 5px;
+                transition: background 0.2s;
+            }
+
+            button:hover {
+                background: #e6b800;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>タイピング初速練習</h1>
+        <button id="start-button">エンターでスタート</button>
+        <div id="game-container">
+            <div id="timer">残り時間: 10秒</div>
+            <div id="score">スコア: 0</div>
+            <div id="average-time">平均反応時間: N/A</div>
+            <div id="letter"></div>
+            <div id="romaji-letter"></div>
+            <div id="input-letter"></div>
+        </div>
+        <script src="main.js"></script>
+    </body>
 </html>
