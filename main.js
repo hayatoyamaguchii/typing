@@ -3,8 +3,8 @@ const timerDisplay = document.getElementById("timer");
 const scoreDisplay = document.getElementById("score");
 const averageTimeDisplay = document.getElementById("average-time");
 const letterDisplay = document.getElementById("letter");
-const romajiLetterDisplay = document.getElementById("romaji-letter");
-const inputLetterDisplay = document.getElementById("input-letter");
+const romajiLetterDisplay = document.getElementById("letter-romaji");
+const inputLetterDisplay = document.getElementById("letter-input");
 
 let timeLeft = 10;
 let score = 0;
