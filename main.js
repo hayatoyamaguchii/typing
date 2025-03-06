@@ -281,6 +281,7 @@ const startGame = () => {
     scoreDisplay.textContent = `スコア: ${score}`;
     averageTimeDisplay.textContent = `平均反応時間: N/A`;
     timerDisplay.textContent = `残り時間: ${timeLeft}秒`;
+    startButton.style.visibility = "hidden";
     updateLetter();
 
     document.addEventListener("keydown", handleKeyPress);
@@ -292,6 +293,8 @@ const startGame = () => {
         if (timeLeft <= 0) {
             clearInterval(gameInterval);
             document.removeEventListener("keydown", handleKeyPress);
+            startButton.style.removeProperty("visibility");
+            startButton.style.visibility = "visible";
 
             const finalAverageTime =
                 reactionTimes.length > 0
